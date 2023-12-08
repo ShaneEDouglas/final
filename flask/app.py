@@ -6,11 +6,23 @@ app = Flask(__name__)
 CORS(app)
 logging.basicConfig(level=logging.INFO)
 
-
+#Database
 faq_responses = {
+
     "weather": "The weather is sunny!",
-    "temperature": "It's currently 22 degrees Celsius."
+    "temperature": "It's currently 22 degrees Celsius.",
+    "help": "You can ask me a question, or you can say hi.",
+    "location": "The address is 12345 Ridley Ave",
+    "Destination":"The address is 12345 Ridley Ave",
+
 }
+
+
+#default route
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify("Welcome to the FAQ chat bot server!")
+
 
 @app.route('/chat', methods=['POST'])
 def chat():
@@ -32,3 +44,4 @@ def determine_response(message):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
