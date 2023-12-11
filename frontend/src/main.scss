@@ -1,148 +1,181 @@
 /* Main.scss */
 .home {
+  padding-top: 60px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: #d9a063;
+  flex-direction: column;
+  background-color: #ddddf7;
   height: 100vh;
-  width: 100vw;
-  padding: 20px; /* Padding for .home */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  width: 100vw; 
+  overflow-x: hidden;
 }
 
-.home-content {
-  border: 0.01em solid white;
-  background-color: white;
-  border-radius: 10px; /* Rounded corners */
-  width: 80vw;
-  max-width: 1200px;
-  height: 80vh;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: stretch; 
-  justify-content: flex-start;
-  padding: 0; 
-}
 
 .topbar {
-  width: 100%; 
+
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  z-index: 100;
+
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center; /* Center the content */
+  justify-content: space-between;
   gap: 10px;
   background: linear-gradient(270deg, rgba(230,183,8,0.9528186274509804) 37%, rgba(207,135,9,1) 100%);
-  padding: 10px 0; 
-  border-top-left-radius: 10px; 
-  border-top-right-radius: 10px;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 
-  img {
-    width: 50px; 
-    height: 50px;
-    border-radius: 50%; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
+  .news-app-title {
+
+    font-size: 24px; 
+    color: #fff; 
+    font-weight: bold; 
+    margin-left: 20px; 
+    margin-right: 20px;
+    
   }
+  .left-group {
+    display: flex;
+    align-items: center;
 
-  p {
-    font-weight: bold;
-    color: white;
-    margin: 0; 
-    font-family: sans-serif;
+    .nav-links {
+      display: flex; 
+      list-style: none; 
+      margin: 0;
+      padding: 0; // Make sure there is no default padding
+
+      li {
+        margin-right: 10px;
+
+        button {
+          background: none;
+          border: none;
+          color: white;
+          cursor: pointer;
+          font-size: 16px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &:hover {
+            transform: scale(1.2);
+            color: white;
+          }
+        }
+      }
+    }
   }
-}
-
-/*Chatbot section*/
-
-.messages {
-  display: flex;
-  flex-direction: column;
-  
-  flex-grow: 1;
-  background-color:#ddddf7;
-  padding:10px;
-  height:calc(100% - 200px);
-  overflow-y: auto;  
-
 }
 
 /*input section*/
 
-.input-container {
-
-  display:flex;
-  position:relative;
-  align-items: center;
-  width:100%;
-  padding-right: 50px;
+.search-container {
+  position: relative; // Set the search container to relative
+  width: 300px;
+  padding-right: 20px;
+  margin-right: 35px;
 }
 
 .input-field {
-  width:100%;
-  padding:10px;
-  border:none;
-  height:60px;
-  outline:none;
-  border-radius: 10px;
-  font-size:20px;
-  font-family: sans-serif;
-  color:black;
-
-  
-}
-
-
-
-.send-button {
-
-   
-  right: 10px; 
-  border: none; 
-  background: none; 
-  cursor: pointer; 
-  z-index: 2; 
+  width: 100%;
   padding: 10px;
+  padding-right: 20px; // Make room for the search button inside the input
+  border: none;
+  height: 30px;
+  outline: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: sans-serif;
+  color: black;
+}
+
+.search-button {
+  position: absolute; // Position the button absolutely inside the search container
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%); // Center vertically
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 2;
+  
  
+  img {
+    width: 20px; // Adjust size as needed
+    height: 20px;
+  }
 }
+/*News card*/
 
-.send-button img {
-  margin-right: 10px;
-  width: 35px; 
-  height: 35px; 
-}
-
-/*Message Section*/
-
-
-.Message {
+.news-card {
+  
   display: flex;
-  flex-direction: column; // Stack the content vertically
-  align-items: flex-end; // Align user messages to the right
-  margin-bottom: 10px; // Space between messages
-  padding: 10px; // Padding inside the message bubble
-  background-color: #DCF8C6; // Light green for user messages
-  border-radius: 20px; // Rounded corners for bubbles
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Optional shadow for depth
-  word-wrap: break-word; // Prevents long text from overflowing
-  max-width: 45%; // Adjust max width to prevent overly long messages
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  background-color: #ddddf7;
+  margin-bottom: 10px;
+  width: calc(25% - 20px); 
+  margin-bottom: 20px;
 
-  p {
-    color: #444;
-    font-size: 16px;
-    line-height: 1.5;
+
+  &:hover {
+    transform: scale(1.02);
   }
 
-  &.owner {
-    
-    align-self: flex-end; // Align user messages to the right
-    background-color: #DCF8C6; // Light green for user messages
-    border-radius: 20px 20px 0 20px; // Tail effect for user messages
+  .news-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
   }
 
-  &.bot {
-    align-self: flex-start; // Align bot messages to the left
-    background-color: #f0f0f0; // Different background for bot messages
-    border-radius: 20px 20px 20px 0; // Tail effect for bot messages
+  .news-content {
+    padding:15px;
+
+
+
+    .news-title {
+
+      font-size:16px;
+      color: black;
+      margin-bottom: 16px;
+    }
+
+
+    .read-more-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: darken(#007bff, 5%);
+      }
+
+    }
+
   }
+
 }
+
+
+/*News Section*/
+.news-column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+}
+
