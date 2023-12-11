@@ -9,7 +9,7 @@
 * React Hooks
 * SCSS
 
-# Prerequsites 
+# Prerequsites 📋
 ### Flask and React Installation (Skip to step 2 if you have flask already installed)
   1. Run the following Commands
       * `cd backend`
@@ -26,17 +26,17 @@
       * Install [Node.js](https://nodejs.org/en/download)
       * Install npm with `npm install`
 
-  4.  Run React!
+  4.  🌟Run React!
       * Run `npm run start` or `npm start`
     
-# Demo Video
+# 🎥 Demo Video
 
   ### Here is a Demo of the project!
 
-  ![Newsly Demo]((https://gifyu.com/image/SiceK))
+  ![Newsly Demo](newswebapp.gif)
 
 
-# License
+# License 📜
 Copyright (c) 2023 Shane Douglas, Ceasar Brito
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
