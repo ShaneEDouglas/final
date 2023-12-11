@@ -25,7 +25,7 @@ const Topbar = ({onSearch, onCategoryChange}) => {
       
 
       <div className="left-group">
-        <span className="news-app-title">News App</span>
+        <span className="news-app-title">Newsly</span>
         <ul className="nav-links">
           <li><button onClick={() => onCategoryChange('sports')}>Sports</button></li>
           <li><button onClick={() => onCategoryChange('weather')}>Weather</button></li>
