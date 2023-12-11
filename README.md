@@ -33,7 +33,7 @@
 
   ### Here is a Demo of the project!
 
-  ![Newsly Demo](URL_TO_YOUR_GIF)
+  ![Newsly Demo]((https://gifyu.com/image/SiceK))
 
 
 # License
